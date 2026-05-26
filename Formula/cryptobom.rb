@@ -1,10 +1,10 @@
-# cryptobom Homebrew formula (prebuilt-binary).
+# cryptobom Homebrew formula (prebuilt binary), generated from a template.
 #
-# This is a TEMPLATE. The release workflow (.github/workflows/release.yml, the
-# `homebrew` job) renders the __PLACEHOLDERS__ on each tagged release and pushes
-# the result to your tap repo as Formula/cryptobom.rb. To bootstrap by hand,
-# replace gangavrk/CryptoBom (owner/repo), 0.1.0 (the tag without the leading "v"),
-# and the three __SHA_*__ values (from the release's checksums.txt).
+# Don't edit this file in the tap by hand: the release workflow
+# (.github/workflows/release.yml, the `homebrew` job) regenerates it on every
+# tagged release -- filling in the repo, version, and per-platform sha256 -- and
+# commits it here. To change it, edit the template at
+# packaging/homebrew/cryptobom.rb in the main repo.
 #
 # A prebuilt binary is shipped rather than built from source because the parsers
 # use tree-sitter via cgo: the binary is platform-specific and needs a C
@@ -12,24 +12,24 @@
 class Cryptobom < Formula
   desc "Developer-first cryptographic discovery for the post-quantum transition"
   homepage "https://github.com/gangavrk/CryptoBom"
-  version "0.1.0"
+  version "0.2.0"
   license "Apache-2.0"
 
   on_macos do
     on_arm do
       url "https://github.com/gangavrk/CryptoBom/releases/download/v#{version}/cryptobom-v#{version}-darwin-arm64.tar.gz"
-      sha256 "13964fb481f32259a5e6f9a6440653c9745b95cfd5398d9472849b7a2220c828"
+      sha256 "d30245156add3766e369e7ea1a3dbd1f642d5bf1bf637fe8daad45203f461ced"
     end
     on_intel do
       url "https://github.com/gangavrk/CryptoBom/releases/download/v#{version}/cryptobom-v#{version}-darwin-amd64.tar.gz"
-      sha256 "9ce1126ac11ee1632c6e6d363efcbc264115cd37df1d30ee6f3af683add491b3"
+      sha256 "714307e90927305297a8f4ab300c36eb7c9e8dfed957a2e50ac7748611ece7ef"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/gangavrk/CryptoBom/releases/download/v#{version}/cryptobom-v#{version}-linux-amd64.tar.gz"
-      sha256 "12a0cd310c988985b7a7553e665ecbdac341766e1c1c18b26ad2b98d14324d7f"
+      sha256 "3642c3bebd1322e83676c4b164d724d92959b1bc113d4bf8008337427d7284d0"
     end
   end
 
